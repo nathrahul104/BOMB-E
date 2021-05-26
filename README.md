@@ -17,4 +17,4 @@ A Email Bomb application using python.
 
 ## Built With
 
-- [Python 3.9.5](https://www.python.org/)
+- Python 3.9.5 - [https://www.python.org/](https://www.python.org/)
